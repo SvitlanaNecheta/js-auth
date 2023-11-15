@@ -1,6 +1,7 @@
 class FieldSelect {
   static toggle = (target) => {
     const options = target.nextElementSibling
+
     options.toggleAttribute('active')
 
     setTimeout(() => {
@@ -18,19 +19,30 @@ class FieldSelect {
   static change = (target) => {
     const parent = target.parentElement.parentElement
     const list = target.parentElement
-    const active =
-      target.parentElement.querySelector('*[active]')
+
+    // ===
+
+    const active = list.querySelector('*[active]')
+
     if (active) active.toggleAttribute('active')
+
+    // ===
 
     target.toggleAttribute('active')
 
+    // ===
+
     const value = parent.querySelector('.field__value')
+
     if (value) {
       value.innerText = target.innerText
       value.classList.remove('field__value--placeholder')
     }
 
+    // ===
+
     list.toggleAttribute('active')
   }
 }
+
 window.fieldSelect = FieldSelect

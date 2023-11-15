@@ -1,9 +1,9 @@
 export const REG_EXP_EMAIL = new RegExp(
-  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/,
 )
 
 export const REG_EXP_PASSWORD = new RegExp(
-  /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
 )
 
 export class Form {
@@ -18,6 +18,7 @@ export class Form {
     const error = this.validate(name, value)
 
     this.value[name] = value
+
     if (error) {
       this.setError(name, error)
       this.error[name] = error
@@ -96,8 +97,6 @@ export class Form {
       el.className = 'alert alert--disabled'
     }
 
-    if (text) {
-      el.innerText = text
-    }
+    if (text) el.innerText = text
   }
 }
