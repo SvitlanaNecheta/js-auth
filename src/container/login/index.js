@@ -79,8 +79,8 @@ class SignupForm extends Form {
 
 window.signupForm = new SignupForm()
 
-//document.addEventListener('DOMContentLoaded', () => {
-//if (window.session) {
-//   location.assign('/')
-// }
-//})
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.session) {
+    location.assign('/')
+  }
+})

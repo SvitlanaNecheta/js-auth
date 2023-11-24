@@ -69,4 +69,14 @@ body {
     color: s.color(gray);
     line-height: 1.5em;
   }
+
+  &__divider{
+    display: block;
+    border: none;
+    width: 100%;
+    margin: 0;
+    height: 1px;
+    background-color: s.color(divider);
+
+  }
 }
